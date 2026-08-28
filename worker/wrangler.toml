@@ -1,0 +1,8 @@
+name = "iqlab-telemetry"
+main = "worker.js"
+compatibility_date = "2026-08-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "iqlab"
+database_id = "REPLACE_AFTER_D1_CREATE"

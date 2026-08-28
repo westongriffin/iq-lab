@@ -63,6 +63,15 @@
         <p style="margin-top:18px">
           <input class="name-input" id="name-in" placeholder="Your name (optional)" value="${name.replace(/"/g, "&quot;")}" maxlength="40">
         </p>
+        ${IQTelemetry.enabled() ? `
+        <p style="font-size:0.85rem; color:var(--ink-2); max-width:460px; margin:0 auto 6px">
+          <label style="cursor:pointer">
+            <input type="checkbox" id="share-in" ${profile?.shareData === false ? "" : "checked"}>
+            Contribute my answers anonymously to improve this test's calibration
+          </label><br>
+          <span class="muted" style="font-size:0.78rem">Only right/wrong and timing per question - never your
+          name or anything identifying. <a href="methodology.html#privacy">Details</a></span>
+        </p>` : ""}
         <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:10px">
           ${resume ? `<button class="btn big" id="resume-btn">Resume test (${resume.done}/${items.length} answered)</button>
                       <button class="btn ghost" id="restart-btn">Start over</button>`
@@ -75,13 +84,15 @@
     const saveName = () => {
       const v = el("name-in").value.trim();
       if (v) IQStore.saveProfile({ name: v });
+      const share = el("share-in");
+      if (share) IQStore.saveProfile({ shareData: share.checked });
     };
     if (resume) {
       el("resume-btn").onclick = () => { saveName(); beginSession(); };
       el("restart-btn").onclick = () => {
         saveName();
         IQStore.clearProgress(mode);
-        state = { idx: 0, answers: {}, spans: {}, startedAt: null, elapsed: 0, finished: false };
+        state = { idx: 0, answers: {}, rts: {}, spans: {}, startedAt: null, elapsed: 0, finished: false };
         beginSession();
       };
     } else {
@@ -292,6 +303,7 @@
     };
     IQStore.addResult(result);
     IQStore.clearProgress(mode);
+    IQTelemetry.send(mode, items, responses, result);
     if (timerHandle) clearInterval(timerHandle);
     location.href = `results.html?id=${result.id}`;
   }
