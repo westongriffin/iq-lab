@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Results — IQ Lab</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><span class="logo-mark">IQ</span> IQ Lab</a>
+    <div class="nav-links">
+      <a href="learn.html">The Science</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="results.html" class="active">My Results</a>
+      <a class="btn" href="test.html?mode=short" style="padding:8px 16px">Take the Test</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container" id="results-root">
+  <div class="result-hero" id="hero"></div>
+
+  <div class="narrow" style="margin:0 auto">
+    <div class="viz-root" style="margin-top:10px">
+      <div id="bell-wrap"></div>
+    </div>
+
+    <div class="result-actions">
+      <button class="btn" id="download-btn">⬇ Download result card</button>
+      <button class="btn subtle" id="share-btn">Share</button>
+      <button class="btn subtle" id="copy-btn">Copy summary</button>
+      <a class="btn ghost" href="test.html?mode=long">Retake / try the full test</a>
+    </div>
+
+    <div class="card" style="margin-bottom:20px">
+      <h3>Domain profile</h3>
+      <p class="muted" style="font-size:0.88rem">Items correct by cognitive domain. Short domain scales are
+        noisy — treat large gaps as hints, not verdicts.</p>
+      <div class="domain-bars viz-root" style="border:none; padding:10px 0 0" id="domain-bars"></div>
+    </div>
+
+    <div class="card" id="interpret" style="margin-bottom:20px"></div>
+
+    <h3 style="margin-top:36px">Past results <span class="muted" style="font-weight:400;font-size:0.85rem">(stored only in this browser)</span></h3>
+    <div class="history-list" id="history"></div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="disclaimer"><strong>IQ Lab</strong> · Educational estimates, not clinical diagnoses.</div>
+    <div><a href="learn.html">The Science</a> · <a href="methodology.html">Methodology</a></div>
+  </div>
+</footer>
+
+<script src="js/storage.js"></script>
+<script src="js/items.js"></script>
+<script src="js/render.js"></script>
+<script src="js/scoring.js"></script>
+<script src="js/results.js"></script>
+</body>
+</html>

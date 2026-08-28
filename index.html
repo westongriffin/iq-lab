@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IQ Lab — Research-Based IQ Testing & Education</title>
+<meta name="description" content="Take a free research-grounded IQ test and learn what intelligence research actually says — every claim sourced to peer-reviewed literature.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><span class="logo-mark">IQ</span> IQ Lab</a>
+    <div class="nav-links">
+      <a href="learn.html">The Science</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="results.html">My Results</a>
+      <a class="btn" href="test.html?mode=short" style="padding:8px 16px">Take the Test</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="eyebrow">Grounded in peer-reviewed research</span>
+    <h1>Understand your mind.<br>Measure it honestly.</h1>
+    <p class="lede">IQ Lab pairs carefully constructed cognitive tests with a plain-language guide to
+      a century of intelligence research — what IQ measures, what it predicts, and what it can't tell you.</p>
+    <div class="hero-ctas">
+      <a class="btn big" href="test.html?mode=short">Quick test · 15 min</a>
+      <a class="btn ghost big" href="test.html?mode=long">Full test · 35 min</a>
+    </div>
+    <p class="hero-note">Free · no account · results stay in your browser</p>
+    <div class="welcome" id="welcome"></div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Two tests, one honest score</h2>
+      <p>Original items in the formats with the strongest research pedigree — figural matrices, verbal and
+         quantitative reasoning, mental rotation, and digit span.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card test-card">
+        <h3><span class="icon">⚡</span> Quick Assessment</h3>
+        <p>A 16-item screener across four cognitive domains. Ideal for a first estimate.</p>
+        <div class="meta"><span>⏱ 10–15 minutes</span><span>📋 16 items</span><span>± 10 pt precision</span></div>
+        <a class="btn" id="cta-short" href="test.html?mode=short">Start quick test</a>
+      </div>
+      <div class="card test-card">
+        <span class="badge">Most accurate</span>
+        <h3><span class="icon">🎯</span> Full Assessment</h3>
+        <p>40 items across five domains, including an interactive working-memory task. A tighter,
+           more reliable estimate with a detailed domain profile.</p>
+        <div class="meta"><span>⏱ 30–40 minutes</span><span>📋 40 items</span><span>± 6 pt precision</span></div>
+        <a class="btn" id="cta-long" href="test.html?mode=long">Start full test</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <h2>What the research actually says</h2>
+      <p>Numbers from the peer-reviewed literature — each one sourced on our <a href="learn.html">Science page</a>.</p>
+    </div>
+    <div class="stat-band">
+      <div class="stat-tile">
+        <div class="num">~50%</div>
+        <div class="lbl">of adult IQ differences associated with genetic differences</div>
+        <div class="src">Plomin & von Stumm, 2018</div>
+      </div>
+      <div class="stat-tile">
+        <div class="num">r ≈ .5</div>
+        <div class="lbl">correlation between IQ and job performance in complex work</div>
+        <div class="src">Schmidt & Hunter, 1998</div>
+      </div>
+      <div class="stat-tile">
+        <div class="num">~3 pts</div>
+        <div class="lbl">average IQ gain per decade across the 20th century (the Flynn effect)</div>
+        <div class="src">Flynn, 1987; Trahan et al., 2014</div>
+      </div>
+      <div class="stat-tile">
+        <div class="num">1–5 pts</div>
+        <div class="lbl">IQ gain per additional year of education</div>
+        <div class="src">Ritchie & Tucker-Drob, 2018</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow">
+    <div class="section-head">
+      <h2>Where would a score fall?</h2>
+      <p>IQ scores are scaled to a normal distribution with mean 100 and standard deviation 15.
+         Drag the slider to see how any score compares to the population.</p>
+    </div>
+    <div class="viz-root explorer">
+      <svg viewBox="0 0 640 200" id="explorer-svg" style="width:100%;height:auto" role="img" aria-label="Interactive normal curve of IQ scores"></svg>
+      <input type="range" id="iq-slider" min="55" max="145" value="115" step="1" aria-label="Choose an IQ score">
+      <div class="explorer-readout">
+        <div><div class="num" id="ex-iq">115</div><div class="lbl">IQ score</div></div>
+        <div><div class="num"><span id="ex-pct">84.1</span>%</div><div class="lbl">of people score below</div></div>
+        <div><div class="num" id="ex-rare">1 in 6</div><div class="lbl" id="ex-rare-lbl">score this high or higher</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <h2>Learn the science</h2>
+      <p>A century of research, summarized honestly — including the parts that complicate the story.</p>
+    </div>
+    <div class="grid-3">
+      <a class="card" href="learn.html#what-is-iq" style="color:inherit">
+        <h3><span class="icon">🧩</span> What IQ measures</h3>
+        <p>The g factor, how modern tests are built, and why so many different mental tasks correlate.</p>
+      </a>
+      <a class="card" href="learn.html#nature-nurture" style="color:inherit">
+        <h3><span class="icon">🧬</span> Genes & environment</h3>
+        <p>What twin, adoption, and DNA studies show — and why "heritable" doesn't mean "fixed."</p>
+      </a>
+      <a class="card" href="learn.html#predicts" style="color:inherit">
+        <h3><span class="icon">📈</span> What IQ predicts</h3>
+        <p>Education, work, health, and longevity — the real effect sizes, without hype.</p>
+      </a>
+      <a class="card" href="learn.html#flynn" style="color:inherit">
+        <h3><span class="icon">🌍</span> The Flynn effect</h3>
+        <p>Why average scores rose for decades, what it says about environment, and recent reversals.</p>
+      </a>
+      <a class="card" href="learn.html#limits" style="color:inherit">
+        <h3><span class="icon">⚖️</span> Limits & criticisms</h3>
+        <p>What IQ tests miss, historical misuse, and how to interpret a score responsibly.</p>
+      </a>
+      <a class="card" href="learn.html#improve" style="color:inherit">
+        <h3><span class="icon">🌱</span> Can you raise IQ?</h3>
+        <p>Education, brain training, nutrition, sleep — which interventions hold up in trials.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="disclaimer">
+      <strong>IQ Lab</strong> · Educational estimates, not clinical diagnoses. For a clinical evaluation
+      (e.g., for a learning disability or giftedness program), see a licensed psychologist who can administer
+      the WAIS or Stanford–Binet under standardized conditions.
+    </div>
+    <div>
+      <a href="learn.html">The Science</a> · <a href="methodology.html">Methodology</a> ·
+      <a href="results.html">My Results</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/storage.js"></script>
+<script src="js/scoring.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

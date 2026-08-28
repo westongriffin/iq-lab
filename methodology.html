@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methodology — IQ Lab</title>
+<meta name="description" content="Exactly how IQ Lab's tests are constructed and scored — item formats, the scoring model, and the honest limitations of an online estimate.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><span class="logo-mark">IQ</span> IQ Lab</a>
+    <div class="nav-links">
+      <a href="learn.html">The Science</a>
+      <a href="methodology.html" class="active">Methodology</a>
+      <a href="results.html">My Results</a>
+      <a class="btn" href="test.html?mode=short" style="padding:8px 16px">Take the Test</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:10px">
+  <div class="container">
+    <span class="eyebrow">Full transparency</span>
+    <h1>How our tests work</h1>
+    <p class="lede">No proprietary black box. Here is precisely what we measure, how the score is computed,
+    and where the limits are.</p>
+  </div>
+</header>
+
+<main class="container prose section" style="padding-top:20px">
+
+  <h2>What the tests contain</h2>
+  <p>Every item on IQ Lab is original — written for this site — but each item <em>format</em> was chosen for
+  its research pedigree as a strong indicator of general cognitive ability:</p>
+  <ul>
+    <li><strong>Figural matrices</strong> (find the tile completing a 3×3 pattern) — the format of the
+    Raven's Progressive Matrices, one of the most g-loaded and culture-portable formats known (Raven, 2000;
+    Carroll, 1993). Our matrices use rules established in the literature: attribute progression,
+    distribution-of-three (Latin squares), figure combination, and rotation.</li>
+    <li><strong>Verbal reasoning</strong> — analogies, classification, vocabulary, and syllogisms, the core
+    of verbal-comprehension scales in the Wechsler tradition. Syllogisms use nonsense terms ("Blorks,"
+    "Fleems") so logic, not world knowledge, decides the answer.</li>
+    <li><strong>Quantitative reasoning</strong> — number-series and quantitative logic items, indicators of
+    fluid/quantitative reasoning in the CHC model (McGrew, 2009).</li>
+    <li><strong>Spatial rotation</strong> — deciding whether a shape is a rotation or a mirror image, after
+    Shepard & Metzler's (1971) classic mental-rotation paradigm. All shapes are chiral, so every mirrored
+    distractor is genuinely wrong — no rotation can make it match.</li>
+    <li><strong>Working memory</strong> (full test only) — forward digit span, administered digit-by-digit,
+    exactly one attempt per sequence, in the Wechsler tradition. Span tasks index the memory component of
+    fluid cognition (Deary, 2012).</li>
+  </ul>
+  <p>The quick test presents 16 items across four domains (~10–15 minutes); the full test presents 40
+  items across five (~30–40 minutes). Within each domain, items ascend in difficulty.</p>
+
+  <h2>The scoring model</h2>
+  <p>Your score is a <strong>deviation IQ</strong> in the Wechsler convention: mean 100, standard deviation
+  15. The computation, in order:</p>
+  <ol>
+    <li>Each item carries an <strong>a-priori difficulty estimate</strong> p — the fraction of adults
+    expected to solve it — assigned from the item's rule complexity and the difficulty gradients reported
+    for comparable item types in the psychometric literature.</li>
+    <li>From those difficulties we derive the raw-score distribution a general adult population would
+    produce on this exact form: its mean (Σp) and its spread. The spread is inflated above the
+    independent-items value to reflect the positive correlation between item responses that g induces —
+    calibrated to internal-consistency reliabilities typical of tests of this length (≈.85 for 16 items,
+    ≈.93 for 40; Cronbach, 1951).</li>
+    <li>Your raw score is converted to a z-score against that distribution and mapped to the IQ scale:
+    <code>IQ = 100 + 15z</code>, reported only within 60–145, the range where a brief instrument retains
+    any precision.</li>
+    <li>The <strong>confidence interval</strong> uses the standard error of measurement,
+    SEM = 15·√(1 − reliability) (Dudek, 1979): about ±10 points (90% CI) for the quick test and ±6 for
+    the full test. The percentile is read off the normal curve.</li>
+  </ol>
+
+  <h2>What this is — and isn't</h2>
+  <div class="callout"><span class="em">✔️</span><div><strong>It is</strong> a research-based estimate: real
+  item formats, a transparent normal-curve scoring model, honest uncertainty bands, and a domain profile
+  instead of a single naked number.</div></div>
+  <div class="callout"><span class="em">✖️</span><div><strong>It is not</strong> a clinical instrument. Our
+  norms are provisional (model-derived, not census-normed), conditions are unproctored, and motivation
+  measurably moves online scores (Duckworth et al., 2011). No online test — ours included — qualifies you
+  for Mensa, a diagnosis, or an accommodation.</div></div>
+  <ul>
+    <li><strong>Practice effects are real.</strong> Retaking inflates scores by several points; your first
+    attempt is the most informative. If you retest, wait a few weeks.</li>
+    <li><strong>Conditions matter.</strong> Sleep deprivation, alcohol, interruptions, and low effort all
+    depress scores. Test rested, in quiet, in one sitting.</li>
+    <li><strong>One sitting is one sample.</strong> Even clinical IQ has a ±5-point band around any single
+    administration. Interpret gaps between your domain scores loosely — short scales are noisy.</li>
+  </ul>
+
+  <h2>Privacy</h2>
+  <p>Everything runs in your browser. Your name, answers, and results are stored only in this browser's
+  local storage — nothing is sent to any server, and there are no accounts, trackers, or analytics. Deleting
+  a result (or clearing site data) removes it permanently.</p>
+
+  <h2>Key sources for this page</h2>
+  <ol class="refs">
+    <li>Raven, J. (2000). The Raven's Progressive Matrices: Change and stability over culture and time. <em>Cognitive Psychology, 41</em>(1), 1–48.</li>
+    <li>Carroll, J. B. (1993). <em>Human Cognitive Abilities.</em> Cambridge University Press.</li>
+    <li>McGrew, K. S. (2009). CHC theory and the human cognitive abilities project. <em>Intelligence, 37</em>(1), 1–10.</li>
+    <li>Shepard, R. N., & Metzler, J. (1971). Mental rotation of three-dimensional objects. <em>Science, 171</em>(3972), 701–703.</li>
+    <li>Deary, I. J. (2012). Intelligence. <em>Annual Review of Psychology, 63</em>, 453–482.</li>
+    <li>Cronbach, L. J. (1951). Coefficient alpha and the internal structure of tests. <em>Psychometrika, 16</em>(3), 297–334.</li>
+    <li>Dudek, F. J. (1979). The continuing misinterpretation of the standard error of measurement. <em>Psychological Bulletin, 86</em>(2), 335–337.</li>
+    <li>Duckworth, A. L., et al. (2011). Role of test motivation in intelligence testing. <em>PNAS, 108</em>(19), 7716–7720.</li>
+    <li>Wechsler, D. (2008). <em>WAIS-IV Technical and Interpretive Manual.</em> Pearson.</li>
+  </ol>
+
+  <div class="callout" style="margin-top:40px">
+    <span class="em">🧠</span>
+    <div>Read the broader evidence on the <a href="learn.html"><strong>Science page</strong></a>, or
+    <a href="test.html?mode=short">take the test</a> now.</div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="disclaimer"><strong>IQ Lab</strong> · Educational estimates, not clinical diagnoses.</div>
+    <div><a href="index.html">Home</a> · <a href="learn.html">The Science</a> · <a href="results.html">My Results</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
