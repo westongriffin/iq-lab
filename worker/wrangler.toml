@@ -5,4 +5,4 @@ compatibility_date = "2026-08-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "iqlab"
-database_id = "REPLACE_AFTER_D1_CREATE"
+database_id = "4a9903df-a580-4a2b-94d7-6edd087739bc"

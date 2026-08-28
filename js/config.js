@@ -4,5 +4,5 @@
    checkbox never renders and nothing ever leaves the browser. */
 
 const IQConfig = {
-  TELEMETRY_URL: "",
+  TELEMETRY_URL: "https://iqlab-telemetry.westongriffin.workers.dev",
 };
