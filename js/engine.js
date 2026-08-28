@@ -16,6 +16,7 @@
   let state = {
     idx: 0,
     answers: {},       // itemId -> option index (mcq/matrix/poly)
+    rts: {},           // itemId -> seconds from first view to first answer
     spans: {},         // itemId -> {played, input, done}
     startedAt: null,
     elapsed: 0,        // seconds banked from previous sessions
@@ -115,8 +116,11 @@
       }).join("")}</div>`;
   }
 
+  let viewStart = Date.now();
+
   function render() {
     if (spanTimer) { clearTimeout(spanTimer); spanTimer = null; }
+    viewStart = Date.now();
     const it = items[state.idx];
     let body;
     if (it.type === "span") body = spanBody(it);
@@ -200,6 +204,7 @@
   function wire(it) {
     shell.querySelectorAll("[data-opt]").forEach((b) => {
       b.onclick = () => {
+        if (state.rts[it.id] == null) state.rts[it.id] = (Date.now() - viewStart) / 1000;
         state.answers[it.id] = Number(b.dataset.opt);
         persist();
         // brief visual confirmation, then auto-advance
@@ -272,7 +277,7 @@
       if (it.type === "span") {
         responses[it.id] = { correct: state.spans[it.id]?.input === it.digits };
       } else {
-        responses[it.id] = { correct: state.answers[it.id] === it.answer };
+        responses[it.id] = { correct: state.answers[it.id] === it.answer, rt: state.rts?.[it.id] };
       }
     }
     const s = IQScore.score(mode, items, responses);

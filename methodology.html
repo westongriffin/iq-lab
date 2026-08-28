@@ -67,22 +67,28 @@
 
   <h2>The scoring model</h2>
   <p>Your score is a <strong>deviation IQ</strong> in the Wechsler convention: mean 100, standard deviation
-  15. The computation, in order:</p>
+  15, computed with <strong>item response theory (IRT)</strong> - the same family of models behind modern
+  clinical and educational tests. The computation, in order:</p>
   <ol>
-    <li>Each item carries an <strong>a-priori difficulty estimate</strong> p - the fraction of adults
-    expected to solve it - assigned from the item's rule complexity and the difficulty gradients reported
-    for comparable item types in the psychometric literature.</li>
-    <li>From those difficulties we derive the raw-score distribution a general adult population would
-    produce on this exact form: its mean (Σp) and its spread. The spread is inflated above the
-    independent-items value to reflect the positive correlation between item responses that g induces -
-    calibrated to internal-consistency reliabilities typical of tests of this length (≈.85 for 16 items,
-    ≈.93 for 40; Cronbach, 1951).</li>
-    <li>Your raw score is converted to a z-score against that distribution and mapped to the IQ scale:
-    <code>IQ = 100 + 15z</code>, reported only within 60–145, the range where a brief instrument retains
-    any precision.</li>
-    <li>The <strong>confidence interval</strong> uses the standard error of measurement,
-    SEM = 15·√(1 − reliability) (Dudek, 1979): about ±10 points (90% CI) for the quick test and ±6 for
-    the full test. The percentile is read off the normal curve.</li>
+    <li>Each item is modeled with a <strong>three-parameter logistic curve</strong> (Birnbaum, 1968;
+    Embretson & Reise, 2000): a difficulty parameter, a discrimination parameter set by item format, and a
+    <strong>guessing floor</strong> equal to chance on that item (25% on a 4-option item, ~17% on 6 options,
+    0% for typed digit-span answers). A lucky guess on a hard item therefore moves your estimate far less
+    than a solved easy item pattern would.</li>
+    <li>Item difficulties are calibrated so the model reproduces each item's <strong>a-priori pass-rate
+    estimate</strong> - the fraction of adults expected to solve it, assigned from rule complexity and the
+    difficulty gradients reported for comparable item types in the psychometric literature. These
+    calibrations are provisional until validated on real response data.</li>
+    <li>Your ability estimate is <strong>Bayesian (expected a posteriori)</strong>: the model combines a
+    population prior with the likelihood of your full right/wrong pattern (Bock & Mislevy, 1982). Which
+    items you solved matters, not just how many. Then <code>IQ = 100 + 15·ability</code>, reported within
+    60–145, the range where a brief instrument retains any precision.</li>
+    <li>The <strong>confidence interval is individualized</strong>: it comes from the spread of your own
+    posterior (90% CI roughly ±13–17 points on the quick test and ±9–12 on the full test), tighter where the test is
+    most informative and honestly wider near the extremes.</li>
+    <li>Response times are recorded per item. Results showing a <strong>rapid-guessing pattern</strong>
+    (many answers faster than reading time allows; Wise & Kong, 2005) are flagged as likely
+    underestimates rather than silently reported.</li>
   </ol>
 
   <h2>What this is - and isn't</h2>
@@ -114,8 +120,10 @@
     <li>McGrew, K. S. (2009). CHC theory and the human cognitive abilities project. <em>Intelligence, 37</em>(1), 1–10.</li>
     <li>Shepard, R. N., & Metzler, J. (1971). Mental rotation of three-dimensional objects. <em>Science, 171</em>(3972), 701–703.</li>
     <li>Deary, I. J. (2012). Intelligence. <em>Annual Review of Psychology, 63</em>, 453–482.</li>
-    <li>Cronbach, L. J. (1951). Coefficient alpha and the internal structure of tests. <em>Psychometrika, 16</em>(3), 297–334.</li>
-    <li>Dudek, F. J. (1979). The continuing misinterpretation of the standard error of measurement. <em>Psychological Bulletin, 86</em>(2), 335–337.</li>
+    <li>Birnbaum, A. (1968). Some latent trait models and their use in inferring an examinee's ability. In Lord & Novick, <em>Statistical Theories of Mental Test Scores.</em> Addison-Wesley.</li>
+    <li>Embretson, S. E., & Reise, S. P. (2000). <em>Item Response Theory for Psychologists.</em> Erlbaum.</li>
+    <li>Bock, R. D., & Mislevy, R. J. (1982). Adaptive EAP estimation of ability in a microcomputer environment. <em>Applied Psychological Measurement, 6</em>(4), 431–444.</li>
+    <li>Wise, S. L., & Kong, X. (2005). Response time effort: A new measure of examinee motivation in computer-based tests. <em>Applied Measurement in Education, 18</em>(2), 163–183.</li>
     <li>Duckworth, A. L., et al. (2011). Role of test motivation in intelligence testing. <em>PNAS, 108</em>(19), 7716–7720.</li>
     <li>Wechsler, D. (2008). <em>WAIS-IV Technical and Interpretive Manual.</em> Pearson.</li>
   </ol>

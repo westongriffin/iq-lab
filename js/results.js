@@ -107,6 +107,10 @@
   // ---------- interpretation ----------
   const rarity = IQScore.rarity(result.iq);
   el("interpret").innerHTML = `
+    ${result.lowEffort ? `<p style="color:var(--critical);font-size:0.95rem"><strong>⚠ Fast responses detected.</strong>
+    Many answers came in under a few seconds, a pattern research links to rapid guessing rather than
+    full effort (Wise & Kong, 2005). This score likely underestimates ability - consider retaking
+    at a comfortable pace.</p>` : ""}
     <p>A score of <strong>${result.iq}</strong> falls in the <strong>${result.band.toLowerCase()}</strong> range of the
     IQ scale (mean 100, standard deviation 15 - the convention used by the Wechsler tests). About
     <strong>${result.iq >= 100 ? `1 in ${rarity}` : `1 in ${rarity}`}</strong> people score
