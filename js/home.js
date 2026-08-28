@@ -1,4 +1,4 @@
-/* IQ Lab — landing page interactions: welcome-back banner and the
+/* IQ Lab - landing page interactions: welcome-back banner and the
    interactive percentile explorer. */
 
 (() => {

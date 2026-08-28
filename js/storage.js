@@ -1,4 +1,4 @@
-/* IQ Lab — localStorage persistence (profile, history, in-progress tests) */
+/* IQ Lab - localStorage persistence (profile, history, in-progress tests) */
 
 const IQStore = (() => {
   const KEYS = {

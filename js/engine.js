@@ -1,4 +1,4 @@
-/* IQ Lab — test engine (test.html). Drives item presentation, response capture,
+/* IQ Lab - test engine (test.html). Drives item presentation, response capture,
    auto-save/resume via localStorage, and hands off to scoring on finish. */
 
 (() => {
@@ -56,7 +56,7 @@
         <p><strong>${items.length} items · about ${MINUTES[mode]} minutes.</strong></p>
         <p>Items cover ${mode === "long" ? "five" : "four"} domains: pattern matrices, verbal reasoning,
            quantitative reasoning, spatial rotation${mode === "long" ? ", and working memory" : ""}.
-           Work at a comfortable pace — there is no per-item time limit, but total time is recorded.</p>
+           Work at a comfortable pace - there is no per-item time limit, but total time is recorded.</p>
         <p>Find a quiet spot, and don't use a calculator or scratch paper. You can move back and forth
            between questions (memory items lock once played). Progress saves automatically in this browser.</p>
         <p style="margin-top:18px">
@@ -68,7 +68,7 @@
                    : `<button class="btn big" id="start-btn">Begin test</button>`}
         </div>
         <p class="muted" style="font-size:0.82rem; margin-top:22px">This is a research-based estimate for
-          education and self-exploration — not a clinical evaluation.
+          education and self-exploration - not a clinical evaluation.
           <a href="methodology.html">How scoring works →</a></p>
       </div>`;
     const saveName = () => {
@@ -145,7 +145,7 @@
         </button>`).join("");
     }
     const prompt = it.type === "matrix" ? "Which tile completes the pattern?"
-      : it.type === "poly" ? "Which option is the same shape, rotated — not mirrored?"
+      : it.type === "poly" ? "Which option is the same shape, rotated - not mirrored?"
       : it.text;
     return `
       <div class="q-card">
@@ -175,7 +175,7 @@
     return `<div class="q-card screen-center">${head}
       <div class="q-text">Memorize the digits</div>
       <p>${it.digits.length} digits will appear one at a time. When they finish, type the sequence
-         in the <strong>same order</strong>. You get one attempt — the sequence won't repeat.</p>
+         in the <strong>same order</strong>. You get one attempt - the sequence won't repeat.</p>
       <div class="span-display" id="span-display"></div>
       <div id="span-controls">
         <button class="btn big" id="span-start">Show the digits</button>
@@ -264,7 +264,7 @@
   function finish() {
     const unanswered = items.length - answeredCount();
     if (unanswered > 0 &&
-        !confirm(`${unanswered} question${unanswered > 1 ? "s" : ""} unanswered — they will be scored as incorrect. Finish anyway?`)) {
+        !confirm(`${unanswered} question${unanswered > 1 ? "s" : ""} unanswered - they will be scored as incorrect. Finish anyway?`)) {
       return;
     }
     const responses = {};
@@ -308,7 +308,7 @@
   });
 
   // ---------- boot ----------
-  document.title = `${TITLES[mode]} — IQ Lab`;
+  document.title = `${TITLES[mode]} - IQ Lab`;
   if (saved && !saved.finished) {
     state = { ...state, ...saved };
     const done = (() => {

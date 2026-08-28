@@ -1,10 +1,10 @@
-/* IQ Lab — item bank.
+/* IQ Lab - item bank.
    All items are original, authored for this site. Item types follow formats with
    strong research pedigrees: figural matrices (the format of Raven 1938/2000),
    verbal analogies & vocabulary, quantitative series, mental rotation
    (Shepard & Metzler 1971), and forward digit span (Wechsler tradition).
-   Each item carries `p` — an a-priori estimate of the proportion of the adult
-   population expected to answer correctly — used by the scoring model.
+   Each item carries `p` - an a-priori estimate of the proportion of the adult
+   population expected to answer correctly - used by the scoring model.
    `answer` indexes into `options` after a deterministic per-item shuffle, so
    option order is stable across sessions (needed for saved progress). */
 
@@ -280,7 +280,7 @@ const IQItems = (() => {
     mr: { label: "Matrix Reasoning", desc: "Find the rule and pick the missing tile." },
     vr: { label: "Verbal Reasoning", desc: "Word meanings, analogies, and logic." },
     nr: { label: "Quantitative Reasoning", desc: "Number patterns and quantitative logic." },
-    sp: { label: "Spatial Rotation", desc: "Pick the rotated — not mirrored — version." },
+    sp: { label: "Spatial Rotation", desc: "Pick the rotated - not mirrored - version." },
     wm: { label: "Working Memory", desc: "Memorize the digits, then type them back." },
   };
 

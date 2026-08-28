@@ -1,7 +1,7 @@
-/* IQ Lab — scoring model.
+/* IQ Lab - scoring model.
    Deviation-IQ scoring in the Wechsler tradition (M = 100, SD = 15):
 
-   1. Each item i carries an a-priori difficulty p_i — the estimated proportion
+   1. Each item i carries an a-priori difficulty p_i - the estimated proportion
       of the adult population that answers it correctly.
    2. For a random member of the population, expected raw score μ = Σ p_i.
    3. Population variance of the raw score exceeds the independent-items
@@ -15,7 +15,7 @@
       (Dudek 1979, "The continuing misinterpretation of the standard error of
       measurement").
 
-   This is an ESTIMATE with provisional (non-clinical) norms — stated plainly
+   This is an ESTIMATE with provisional (non-clinical) norms - stated plainly
    on the methodology page and on every result. */
 
 const IQScore = (() => {

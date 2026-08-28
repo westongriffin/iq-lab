@@ -1,4 +1,4 @@
-/* IQ Lab — SVG rendering for visual test items (matrix cells, polyomino shapes).
+/* IQ Lab - SVG rendering for visual test items (matrix cells, polyomino shapes).
    All coordinates live in a 100×100 viewBox; colors come from CSS currentColor
    so items render correctly in light and dark themes. */
 

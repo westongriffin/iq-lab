@@ -1,4 +1,4 @@
-/* IQ Lab — results page: score display, bell-curve visualization, domain
+/* IQ Lab - results page: score display, bell-curve visualization, domain
    breakdown, share / download, and result history. */
 
 (() => {
@@ -13,7 +13,7 @@
       <div class="q-card screen-center" style="max-width:640px;margin:40px auto">
         <div class="big-icon">📊</div>
         <h2>No results yet</h2>
-        <p>Take a test and your results will appear here. They stay in this browser — no account needed.</p>
+        <p>Take a test and your results will appear here. They stay in this browser - no account needed.</p>
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
           <a class="btn big" href="test.html?mode=short">Take the quick test</a>
           <a class="btn ghost big" href="test.html?mode=long">Take the full test</a>
@@ -108,11 +108,11 @@
   const rarity = IQScore.rarity(result.iq);
   el("interpret").innerHTML = `
     <p>A score of <strong>${result.iq}</strong> falls in the <strong>${result.band.toLowerCase()}</strong> range of the
-    IQ scale (mean 100, standard deviation 15 — the convention used by the Wechsler tests). About
+    IQ scale (mean 100, standard deviation 15 - the convention used by the Wechsler tests). About
     <strong>${result.iq >= 100 ? `1 in ${rarity}` : `1 in ${rarity}`}</strong> people score
     ${result.iq >= 100 ? "this high or higher" : "this low or lower"}.</p>
     <p class="muted" style="font-size:0.9rem">Remember: this is a brief online estimate with provisional norms, not a
-    clinical assessment. Scores can shift with sleep, effort, practice, and testing conditions —
+    clinical assessment. Scores can shift with sleep, effort, practice, and testing conditions -
     professionally administered tests report the same ±${result.ci90}-point kind of uncertainty.
     <a href="methodology.html">Read how this score is computed →</a></p>`;
 
