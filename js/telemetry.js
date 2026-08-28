@@ -33,10 +33,12 @@ const IQTelemetry = (() => {
     try {
       const body = JSON.stringify(payload);
       const url = IQConfig.TELEMETRY_URL.replace(/\/$/, "") + "/submit";
+      // text/plain keeps this a CORS "simple request": sendBeacon cannot
+      // preflight, so a JSON content type would be silently dropped cross-origin
       if (navigator.sendBeacon) {
-        navigator.sendBeacon(url, new Blob([body], { type: "application/json" }));
+        navigator.sendBeacon(url, body);
       } else {
-        fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body, keepalive: true }).catch(() => {});
+        fetch(url, { method: "POST", headers: { "Content-Type": "text/plain" }, body, keepalive: true }).catch(() => {});
       }
     } catch { /* never disturb the user's result */ }
   }
